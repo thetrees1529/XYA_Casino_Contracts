@@ -1,6 +1,7 @@
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 contract Random {
     uint nonce;
     function _randomNumber(uint _upTo) internal returns(uint number) {
@@ -13,6 +14,8 @@ contract Random {
     }
 }
 contract Slots is Ownable, Random {
+    using Address for address;
+
     constructor(IERC20 _XYA) {
         XYA = _XYA;
     }
@@ -132,7 +135,7 @@ contract Slots is Ownable, Random {
         _takeFromBank(player, bank);
     }
 
-    function spin() public {
+    function spin() public noContract {
         address player = _msgSender();
         _payForSpin(player);
         _spin(player);
@@ -408,5 +411,11 @@ contract Slots is Ownable, Random {
     function _logHistoricalWinnings(address _player, uint _winnings) private {
         uint[] storage historicalWinnings = _getHistoricalWinnings(_player);
         historicalWinnings.push(_winnings);
+    }
+
+    modifier noContract() {
+        address sender = _msgSender();
+        require(!sender.isContract(), "Contracts may not play slots.");
+        _;
     }
 }

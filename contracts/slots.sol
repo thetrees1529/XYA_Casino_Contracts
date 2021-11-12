@@ -35,7 +35,7 @@ contract Slots is Ownable, Random {
     
     //events
     event Won(address indexed player, uint winnings);
-    event Spun(address indexed player, uint amount);
+    event Spun(address indexed player);
     event Deposit(address indexed player, uint amount);
     event Withdraw(address indexed player, uint amount);
     
@@ -96,6 +96,17 @@ contract Slots is Ownable, Random {
 
     function getHistoricalWinningOfPlayerbyIndex(address _for, uint _index) public view returns(uint) {
         return _getHistoricalWinning(_for, _index);
+    }
+
+
+
+    //reel data
+    function getReels() public view returns(string[][3] memory ) {
+        return _getReels();
+    }
+
+    function positionsOf(address _player) public view returns(uint[3] memory) {
+        return _getPositions(_player);
     }
 
 
@@ -264,11 +275,13 @@ contract Slots is Ownable, Random {
 
     function _addToCredits(address _for, uint _value) private {
         _credits[_for] += _value;
+        emit Deposit(_for, _value);
     }
 
     function _takeFromBank(address _for, uint _value) private {
         require(_bank[_for] >= _value, "Your bank balance is too low to withdraw this amount.");
         _bank[_for] -= _value;
+        emit Withdraw(_for, _value);
     }
 
     function _addToBank(address _for, uint _value) private {
@@ -311,6 +324,7 @@ contract Slots is Ownable, Random {
                 positions[i] = (pos + 1) % reels[i].length;
             }
         }
+        emit Spun(_for);
     }
 
 

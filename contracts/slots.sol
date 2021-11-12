@@ -66,8 +66,8 @@ contract Slots is Ownable, Random {
 
 
     //pay table
-    function addToPayTable(PayLineData calldata _payLine) public onlyOwner {
-        _addToPayTable(_payLine);
+    function addToPayTable(PayLineData calldata _payLineData) public onlyOwner {
+        _addToPayTable(_payLineData);
     }
 
     function removeFromPayTable(uint _index) public onlyOwner {

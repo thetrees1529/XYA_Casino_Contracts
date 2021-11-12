@@ -101,12 +101,19 @@ contract Slots is Ownable, Random {
 
 
     //reel data
-    function getReels() public view returns(string[][3] memory ) {
+    function reels() public view returns(string[][3] memory ) {
         return _getReels();
     }
 
     function positionsOf(address _player) public view returns(uint[3] memory) {
         return _getPositions(_player);
+    }
+
+
+
+    //price per spin
+    function creditPrice() public view returns(uint) {
+        return _getCreditPrice();
     }
 
 
@@ -155,6 +162,14 @@ contract Slots is Ownable, Random {
         return _getCredits(_player);
     }
 
+    function holdsOf(address _player) public view returns(uint) {
+        return _getHolds(_player);
+    }
+
+    function nudgesOf(address _player) public view returns(uint) {
+        return _getNudges(_player);
+    }
+
 
 
     
@@ -185,7 +200,9 @@ contract Slots is Ownable, Random {
         return _getPayTable()[_index];
     }
 
-
+    function _getCreditPrice() private view returns(uint) {
+        return _creditPrice;
+    }
     
     function _getHistoricalResults(address _player) private view returns(string[3][] storage) {
         return _historicalResults[_player];
@@ -232,6 +249,14 @@ contract Slots is Ownable, Random {
     function _getCredits(address _player) private view returns(uint) {
         return _credits[_player];
     }
+
+    function _getHolds(address _player) private view returns(uint) {
+        return _holds[_player];
+    }
+
+    function _getNudges(address _player) private view returns(uint) {
+        return _nudges[_player];
+    }
     
 
 
@@ -271,6 +296,7 @@ contract Slots is Ownable, Random {
     function _takeFromCredits(address _player, uint _value) private {
         require(_credits[_player] >= _value, "You have ran out of credits.");
         _credits[_player] -= _value;
+        emit Spun(_player);
     }
 
     function _addToCredits(address _player, uint _value) private {
@@ -286,6 +312,7 @@ contract Slots is Ownable, Random {
 
     function _addToBank(address _player, uint _value) private {
         _bank[_player] += _value;
+        emit Won(_player, _value);
     }
 
     function _payForSpin(address _player) private {
@@ -324,7 +351,6 @@ contract Slots is Ownable, Random {
                 positions[i] = (pos + 1) % reels[i].length;
             }
         }
-        emit Spun(_player);
     }
 
 
@@ -365,8 +391,7 @@ contract Slots is Ownable, Random {
             string[3] memory payLine = payLineData.payLine;
             uint payout = payLineData.payout;
             if(keccak256(abi.encode(payLine)) == keccak256(abi.encode(result))) {
-                XYA.transfer(_player, payout);
-                emit Won(_player, payout);
+                _addToBank(_player, payout);
             }
             winnings += payout;
         }

@@ -84,6 +84,25 @@ contract Slots is Ownable, Random {
 
 
 
+    //holds and nudges
+    function getHoldsInfo() public view returns(uint chance, uint min, uint max) {
+        return _getHoldsInfo();
+    }
+
+    function getNudgesInfo() public view returns(uint chance, uint min, uint max) {
+        return _getNudgesInfo();
+    }
+
+    function setHoldsInfo(uint _chance, uint _min, uint _max) public onlyOwner {
+        _setHoldsInfo(_chance, _min, _max);
+    }
+
+    function setnudgesInfo(uint _chance, uint _min, uint _max) public onlyOwner {
+        _setNudgesInfo(_chance, _min, _max);
+    }
+
+
+
     //previous results
     function getHistoricalResultsLengthOfPlayer(address _player) public view returns(uint) {
         return _getHistoricalResultsLength(_player);
@@ -175,12 +194,9 @@ contract Slots is Ownable, Random {
 
 
 
-    
 
 
-
-
-
+    //behind the scenes
     function _addToPayTable(PayLineData calldata _payLine) private {
         _payTable.push(_payLine);
     }
@@ -402,7 +418,21 @@ contract Slots is Ownable, Random {
         _logHistoricalWinnings(_player, winnings);
     }
 
+    function _getHoldsInfo() private view returns(uint chance, uint min, uint max) {
+        return(_holdsChance, _holdsMin, _holdsMax);
+    }
 
+    function _getNudgesInfo() private view returns(uint chance, uint min, uint max) {
+        return(_nudgesChance, _nudgesMin, _nudgesMax);
+    }
+
+    function _setHoldsInfo(uint _chance, uint _min, uint _max) private {
+        (_holdsChance, _holdsMin, _holdsMax) = (_chance, _min, _max);
+    }
+
+    function _setNudgesInfo(uint _chance, uint _min, uint _max) private {
+        (_nudgesChance, _nudgesMin, _nudgesMax) = (_chance, _min, _max);
+    }
 
     function _logHistoricalResults(address _player, string[3] memory _result) private {
         string[3][] storage historicalResults = _getHistoricalResults(_player);

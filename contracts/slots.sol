@@ -85,11 +85,11 @@ contract Slots is Ownable, Random {
 
 
     //holds and nudges
-    function getHoldsInfo() public view returns(uint chance, uint min, uint max) {
+    function holdsInfo() public view returns(uint chance, uint min, uint max) {
         return _getHoldsInfo();
     }
 
-    function getNudgesInfo() public view returns(uint chance, uint min, uint max) {
+    function nudgesInfo() public view returns(uint chance, uint min, uint max) {
         return _getNudgesInfo();
     }
 

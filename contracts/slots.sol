@@ -71,7 +71,7 @@ contract Slots is Ownable, Random {
         _removeFromPayTable(_index);
     }
 
-    function getPayTableLength() public view onlyOwner returns(uint) {
+    function getPayTableLength() public view returns(uint) {
         return _getPayTableLength();
     }
 
@@ -113,7 +113,7 @@ contract Slots is Ownable, Random {
         XYA.transfer(player, bank);
         _takeFromBank(player, bank);
     }
-    
+
     function spin() public {
         address player = _msgSender();
         _payForSpin(player);
@@ -147,20 +147,6 @@ contract Slots is Ownable, Random {
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

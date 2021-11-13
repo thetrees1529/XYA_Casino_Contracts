@@ -142,6 +142,10 @@ contract Slots is Ownable, Random {
         return _getCreditPrice();
     }
 
+    function setCreditPrice(uint _price) public onlyOwner {
+        _setCreditPrice(_price);
+    }
+
 
 
     //main game
@@ -229,6 +233,10 @@ contract Slots is Ownable, Random {
 
     function _getCreditPrice() private view returns(uint) {
         return _creditPrice;
+    }
+
+    function _setCreditPrice(uint _price) private {
+        _creditPrice = _price;
     }
 
     function _setReels(string[][3] calldata _newReels) private {

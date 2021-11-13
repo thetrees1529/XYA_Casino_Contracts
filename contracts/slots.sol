@@ -127,6 +127,10 @@ contract Slots is Ownable, Random {
         return _getReels();
     }
 
+    function setReels(string[][3] calldata _newReels) public onlyOwner {
+        _setReels(_newReels);
+    }
+
     function positionsOf(address _player) public view returns(uint[3] memory) {
         return _getPositions(_player);
     }
@@ -188,6 +192,10 @@ contract Slots is Ownable, Random {
         return _getHolds(_player);
     }
 
+    function heldOf(address _player) public view returns(bool[3] memory) {
+        return _getHeld(_player);
+    }
+
     function nudgesOf(address _player) public view returns(uint) {
         return _getNudges(_player);
     }
@@ -221,6 +229,10 @@ contract Slots is Ownable, Random {
 
     function _getCreditPrice() private view returns(uint) {
         return _creditPrice;
+    }
+
+    function _setReels(string[][3] calldata _newReels) private {
+        _reels = _newReels;
     }
     
     function _getHistoricalResults(address _player) private view returns(string[3][] storage) {

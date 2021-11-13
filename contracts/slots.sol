@@ -5,9 +5,6 @@ import "@openzeppelin/contracts/utils/Address.sol";
 contract Random {
     uint nonce;
     function _randomNumber(uint _upTo) internal returns(uint number) {
-        if(_upTo == 0) {
-            _upTo ++;
-        }
         uint res = uint(keccak256(abi.encodePacked(block.timestamp, "tailchinkra", nonce)));
         number = res % _upTo;
         nonce ++;
@@ -238,10 +235,6 @@ contract Slots is Ownable, Random {
     function _setCreditPrice(uint _price) private {
         _creditPrice = _price;
     }
-
-    function _setReels(string[][3] calldata _newReels) private {
-        _reels = _newReels;
-    }
     
     function _getHistoricalResults(address _player) private view returns(string[3][] storage) {
         return _historicalResults[_player];
@@ -279,6 +272,10 @@ contract Slots is Ownable, Random {
 
     function _getReels() private view returns(string[][3] storage) {
         return _reels;
+    }
+
+    function _setReels(string[][3] memory _newReels) private {
+        _reels = _newReels;
     }
 
     function _getBank(address _player) private view returns(uint) {
@@ -387,7 +384,7 @@ contract Slots is Ownable, Random {
         for(uint i; i < 3; i ++) {
             if(!held[i]) {
                 uint pos = positions[i];
-                positions[i] = (pos + 1) % reels[i].length;
+                positions[i] = _randomNumber(reels[i].length);
             }
         }
     }

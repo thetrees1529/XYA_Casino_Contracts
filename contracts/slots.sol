@@ -68,7 +68,7 @@ contract Slots is Ownable, Random {
     }
 
     function removeFromPayTable(uint _index) public onlyOwner {
-        _removeFromPayTable(_index);
+        _removeFromPayTable(_payTable, _index);
     }
 
     function getPayTableLength() public view returns(uint) {
@@ -210,10 +210,9 @@ contract Slots is Ownable, Random {
         _payTable.push(_payLine);
     }
 
-    function _removeFromPayTable(uint _index) private {
-        PayLineData[] storage table = _getPayTable();
-        table[_index] = table[table.length - 1];
-        table.pop();
+    function _removeFromPayTable(PayLineData[] storage _table, uint _index) private {
+        _table[_index] = _table[_table.length - 1];
+        _table.pop();
     }
 
     function _getPayTable() private view returns(PayLineData[] storage) {
@@ -383,8 +382,8 @@ contract Slots is Ownable, Random {
         bool[3] storage held = _getHeld(_player);
         for(uint i; i < 3; i ++) {
             if(!held[i]) {
-                uint pos = positions[i];
-                positions[i] = _randomNumber(reels[i].length);
+                uint pos = _randomNumber(reels[i].length);
+                positions[i] = pos;
             }
         }
     }

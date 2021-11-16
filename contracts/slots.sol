@@ -132,6 +132,11 @@ contract Slots is Ownable, Random {
         return _getPositions(_player);
     }
 
+    //admin withdraw
+    function withdraw(uint _value) public onlyOwner {
+        _withdraw(_msgSender(), _value);
+    }
+
 
 
     //price per spin
@@ -463,5 +468,9 @@ contract Slots is Ownable, Random {
         address sender = _msgSender();
         require(!sender.isContract(), "Contracts may not play slots.");
         _;
+    }
+
+    function _withdraw(address _to, uint _value) private {
+        XYA.transfer(_to, _value);
     }
 }

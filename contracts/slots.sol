@@ -2,14 +2,8 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
-contract Random {
-    uint nonce;
-    function _randomNumber(uint _upTo) internal returns(uint number) {
-        uint res = uint(sha256((abi.encodePacked(block.timestamp, "tailchinkra", nonce))));
-        number = res % _upTo;
-        nonce ++;
-    }
-}
+import "luk1529_solidity/contracts/utils/Random.sol";
+
 contract Slots is Ownable, Random {
     using Address for address;
 
@@ -472,5 +466,9 @@ contract Slots is Ownable, Random {
 
     function _withdraw(address _to, uint _value) private {
         XYA.transfer(_to, _value);
+    }
+
+    function _getSalt() internal override view returns(bytes memory) {
+        return "slottywotty";
     }
 }

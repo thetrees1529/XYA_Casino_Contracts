@@ -3,18 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract Random {
-    uint nonce;
-    function _randomNumber(uint _upTo) internal returns(uint number) {
-        if(_upTo == 0) {
-            return 0;
-        }
-        uint res = uint(keccak256(abi.encodePacked(block.timestamp, "peepeepoopoo", nonce)));
-        number = res % _upTo;
-        nonce ++;
-    }
-}
+import "luk1529_solidity/contracts/utils/Random.sol";
 
 contract Roulette is Ownable, Random {
     //profit takers
@@ -271,5 +260,9 @@ contract Roulette is Ownable, Random {
     function deleteProfitTakers() public onlyOwner {
         delete profitTakers;
         profitTakerPoints -= profitTakerPoints;
+    }
+
+    function _getSalt() internal override view returns(bytes memory) {
+        return "rourou";
     }
 }

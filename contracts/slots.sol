@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/utils/Address.sol";
 contract Random {
     uint nonce;
     function _randomNumber(uint _upTo) internal returns(uint number) {
-        uint res = uint(keccak256(abi.encodePacked(block.timestamp, "tailchinkra", nonce)));
+        uint res = uint(sha256((abi.encodePacked(block.timestamp, "tailchinkra", nonce))));
         number = res % _upTo;
         nonce ++;
     }

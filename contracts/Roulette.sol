@@ -262,7 +262,7 @@ contract Roulette is Ownable, Random {
         profitTakerPoints -= profitTakerPoints;
     }
 
-    function _getSalt() internal override view returns(bytes memory) {
+    function _getSalt() internal override pure returns(bytes memory) {
         return "rourou";
     }
 }

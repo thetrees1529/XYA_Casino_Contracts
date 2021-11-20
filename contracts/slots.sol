@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -376,12 +377,12 @@ contract Slots is Ownable, Random {
 
 
     function _spin(address _player) private {
-        string[][3] storage reels = _getReels();
+        string[][3] storage currentReels = _getReels();
         uint[3] storage positions = _getPositions(_player);
         bool[3] storage held = _getHeld(_player);
         for(uint i; i < 3; i ++) {
             if(!held[i]) {
-                uint pos = _randomNumber(reels[i].length);
+                uint pos = _randomNumber(currentReels[i].length);
                 positions[i] = pos;
             }
         }
@@ -390,12 +391,12 @@ contract Slots is Ownable, Random {
 
 
     function _nudge(address _player, uint _index) private {
-        string[][3] storage reels = _getReels();
+        string[][3] storage currentReels = _getReels();
         uint[3] storage positions = _getPositions(_player);
         bool[3] storage held = _getHeld(_player);
         require(!held[_index], "Cannot nudge a held position.");
         uint pos = positions[_index];
-        positions[_index] = (pos + 1) % reels[_index].length;
+        positions[_index] = (pos + 1) % currentReels[_index].length;
         _decrementNudges(_player);
         _payout(_player);
     }
@@ -412,12 +413,12 @@ contract Slots is Ownable, Random {
 
 
     function _payout(address _player) private {
-        string[][3] storage reels = _getReels();
+        string[][3] storage currentReels = _getReels();
         uint[3] storage positions = _getPositions(_player);
         string[3] memory result = [
-            reels[0][positions[0]], 
-            reels[1][positions[1]],
-            reels[2][positions[2]]
+            currentReels[0][positions[0]], 
+            currentReels[1][positions[1]],
+            currentReels[2][positions[2]]
         ];
         uint winnings;
         for(uint i; i < _getPayTableLength(); i ++) {
@@ -468,7 +469,7 @@ contract Slots is Ownable, Random {
         XYA.transfer(_to, _value);
     }
 
-    function _getSalt() internal override view returns(bytes memory) {
+    function _getSalt() internal override pure returns(bytes memory) {
         return "slottywotty";
     }
 }

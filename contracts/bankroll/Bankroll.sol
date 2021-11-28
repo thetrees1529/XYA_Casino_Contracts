@@ -99,8 +99,8 @@ contract Bankroll is Context, Ownable, FeeTakers {
         _takeProfit();
     }
 
-    function _getNetBalance() private view returns(int netProfit) {
-        netProfit = int(_totalInflow) - int(_totalOutflow);
+    function _getNetBalance() private view returns(int netBalance) {
+        netBalance = int(_totalInflow) - int(_totalOutflow);
     }
 
     function _takeProfit() private {

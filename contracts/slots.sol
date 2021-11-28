@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "luk1529_solidity/contracts/utils/Random.sol";
 
-contract Slots is Ownable, Random {
+contract Slots is Ownable, Random("slottywotty") {
     using Address for address;
 
     constructor(IERC20 _XYA) {

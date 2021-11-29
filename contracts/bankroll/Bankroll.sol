@@ -1,7 +1,6 @@
 //SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "luk1529_solidity/contracts/token/ERC20User.sol";
@@ -63,7 +62,6 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
     function setApproval(address addr, bool approval) public onlyOwner {
         _setApproval(addr, approval);
     }
-
 
     //take out funds if necessary
     function emergencyWithdraw(uint amount) public onlyOwner {

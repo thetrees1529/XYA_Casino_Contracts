@@ -4,18 +4,16 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "luk1529_solidity/contracts/token/ERC20User.sol";
 import "luk1529_solidity/contracts/fee/FeeTakersERC20.sol";
 
-contract Bankroll is Context, Ownable, FeeTakers {
-    IERC20 _XYA;
-    
-    
+contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
+
     uint _totalInflow;
     uint _totalOutflow;
 
 
-    constructor(IERC20 XYA_) FeeTakers(XYA_) {
-        _setXYA(XYA_);
+    constructor(IERC20 XYA) ERC20User(XYA) {
     }
 
     struct PlayerData {
@@ -88,14 +86,14 @@ contract Bankroll is Context, Ownable, FeeTakers {
     function _depositFrom(address player, uint amount) private {
         PlayerData storage playerData = _getPlayerData(player);
         playerData.credit += amount;
-        _XYA.transferFrom(player, address(this), amount);
+        _XYATokenContract().transferFrom(player, address(this), amount);
         emit Deposit(player, amount);
     }
 
     function _withdrawTo(address player, uint amount) private {
         PlayerData storage playerData = _getPlayerData(player);
         playerData.bank -= amount;
-        _XYA.transferFrom(address(this), player, amount);
+        _XYATokenContract().transferFrom(address(this), player, amount);
         emit Withdraw(player, amount);
     }
 
@@ -129,16 +127,14 @@ contract Bankroll is Context, Ownable, FeeTakers {
     }
 
     function _emergencyWithdraw(address to, uint amount) private {
-        _XYA.transfer(to, amount);
+        _XYATokenContract().transfer(to, amount);
+    }
+
+    function _XYATokenContract() private view returns(IERC20) {
+        return _getToken();
     }
 
     function _setApproval(address addr, bool approval) private {
         _approved[addr] = approval;
     }
-
-    function _setXYA(IERC20 XYA_) private {
-        _XYA = XYA_;
-    }
-
-    
 }

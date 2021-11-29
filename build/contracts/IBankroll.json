@@ -52,24 +52,24 @@
     "absolutePath": "project:/contracts/bankroll/CasinoGame.sol",
     "exportedSymbols": {
       "CasinoGame": [
-        2696
+        2700
       ],
       "Context": [
         501
       ],
       "IBankroll": [
-        2653
+        2657
       ],
       "Ownable": [
         104
       ]
     },
-    "id": 2697,
+    "id": 2701,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2636,
+        "id": 2640,
         "literals": [
           "solidity",
           "^",
@@ -77,29 +77,29 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "34:23:10"
+        "src": "34:23:11"
       },
       {
         "absolutePath": "@openzeppelin/contracts/utils/Context.sol",
         "file": "@openzeppelin/contracts/utils/Context.sol",
-        "id": 2637,
+        "id": 2641,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2697,
+        "scope": 2701,
         "sourceUnit": 502,
-        "src": "59:51:10",
+        "src": "59:51:11",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 2638,
+        "id": 2642,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2697,
+        "scope": 2701,
         "sourceUnit": 105,
-        "src": "112:52:10",
+        "src": "112:52:11",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -110,36 +110,36 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 2653,
+        "id": 2657,
         "linearizedBaseContracts": [
-          2653
+          2657
         ],
         "name": "IBankroll",
-        "nameLocation": "178:9:10",
+        "nameLocation": "178:9:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "a6bb4664",
-            "id": 2645,
+            "id": 2649,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "playFrom",
-            "nameLocation": "204:8:10",
+            "nameLocation": "204:8:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2643,
+              "id": 2647,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2640,
+                  "id": 2644,
                   "mutability": "mutable",
                   "name": "player",
-                  "nameLocation": "223:6:10",
+                  "nameLocation": "223:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2645,
-                  "src": "215:14:10",
+                  "scope": 2649,
+                  "src": "215:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -147,10 +147,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2639,
+                    "id": 2643,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "215:7:10",
+                    "src": "215:7:11",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -161,13 +161,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2642,
+                  "id": 2646,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "239:6:10",
+                  "nameLocation": "239:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2645,
-                  "src": "231:14:10",
+                  "scope": 2649,
+                  "src": "231:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -175,10 +175,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2641,
+                    "id": 2645,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "231:7:10",
+                    "src": "231:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -187,42 +187,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "213:34:10"
+              "src": "213:34:11"
             },
             "returnParameters": {
-              "id": 2644,
+              "id": 2648,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "256:0:10"
+              "src": "256:0:11"
             },
-            "scope": 2653,
-            "src": "195:62:10",
+            "scope": 2657,
+            "src": "195:62:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "8d0c3bd4",
-            "id": 2652,
+            "id": 2656,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "winTo",
-            "nameLocation": "272:5:10",
+            "nameLocation": "272:5:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2650,
+              "id": 2654,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2647,
+                  "id": 2651,
                   "mutability": "mutable",
                   "name": "player",
-                  "nameLocation": "288:6:10",
+                  "nameLocation": "288:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2652,
-                  "src": "280:14:10",
+                  "scope": 2656,
+                  "src": "280:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -230,10 +230,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2646,
+                    "id": 2650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "280:7:10",
+                    "src": "280:7:11",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -244,13 +244,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2649,
+                  "id": 2653,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "304:6:10",
+                  "nameLocation": "304:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2652,
-                  "src": "296:14:10",
+                  "scope": 2656,
+                  "src": "296:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -258,10 +258,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2648,
+                    "id": 2652,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "296:7:10",
+                    "src": "296:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -270,23 +270,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "278:34:10"
+              "src": "278:34:11"
             },
             "returnParameters": {
-              "id": 2651,
+              "id": 2655,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "321:0:10"
+              "src": "321:0:11"
             },
-            "scope": 2653,
-            "src": "263:59:10",
+            "scope": 2657,
+            "src": "263:59:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2697,
-        "src": "168:157:10",
+        "scope": 2701,
+        "src": "168:157:11",
         "usedErrors": []
       },
       {
@@ -294,61 +294,61 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 2654,
+              "id": 2658,
               "name": "Context",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 501,
-              "src": "350:7:10"
+              "src": "350:7:11"
             },
-            "id": 2655,
+            "id": 2659,
             "nodeType": "InheritanceSpecifier",
-            "src": "350:7:10"
+            "src": "350:7:11"
           },
           {
             "baseName": {
-              "id": 2656,
+              "id": 2660,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 104,
-              "src": "359:7:10"
+              "src": "359:7:11"
             },
-            "id": 2657,
+            "id": 2661,
             "nodeType": "InheritanceSpecifier",
-            "src": "359:7:10"
+            "src": "359:7:11"
           }
         ],
         "canonicalName": "CasinoGame",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2696,
+        "id": 2700,
         "linearizedBaseContracts": [
-          2696,
+          2700,
           104,
           501
         ],
         "name": "CasinoGame",
-        "nameLocation": "336:10:10",
+        "nameLocation": "336:10:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2667,
+              "id": 2671,
               "nodeType": "Block",
-              "src": "406:41:10",
+              "src": "406:41:11",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2664,
+                        "id": 2668,
                         "name": "Bankroll",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2660,
-                        "src": "430:8:10",
+                        "referencedDeclaration": 2664,
+                        "src": "430:8:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       }
@@ -356,22 +356,22 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       ],
-                      "id": 2663,
+                      "id": 2667,
                       "name": "_setBankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2695,
-                      "src": "417:12:10",
+                      "referencedDeclaration": 2699,
+                      "src": "417:12:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2653_$returns$__$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2657_$returns$__$",
                         "typeString": "function (contract IBankroll)"
                       }
                     },
-                    "id": 2665,
+                    "id": 2669,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -379,20 +379,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "417:22:10",
+                    "src": "417:22:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2666,
+                  "id": 2670,
                   "nodeType": "ExpressionStatement",
-                  "src": "417:22:10"
+                  "src": "417:22:11"
                 }
               ]
             },
-            "id": 2668,
+            "id": 2672,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -400,87 +400,87 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2661,
+              "id": 2665,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2660,
+                  "id": 2664,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "396:8:10",
+                  "nameLocation": "396:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2668,
-                  "src": "386:18:10",
+                  "scope": 2672,
+                  "src": "386:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2659,
+                    "id": 2663,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2658,
+                      "id": 2662,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "386:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "386:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "386:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "386:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "385:20:10"
+              "src": "385:20:11"
             },
             "returnParameters": {
-              "id": 2662,
+              "id": 2666,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "406:0:10"
+              "src": "406:0:11"
             },
-            "scope": 2696,
-            "src": "374:73:10",
+            "scope": 2700,
+            "src": "374:73:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 2671,
+            "id": 2675,
             "mutability": "mutable",
             "name": "_Bankroll",
-            "nameLocation": "463:9:10",
+            "nameLocation": "463:9:11",
             "nodeType": "VariableDeclaration",
-            "scope": 2696,
-            "src": "453:19:10",
+            "scope": 2700,
+            "src": "453:19:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IBankroll_$2653",
+              "typeIdentifier": "t_contract$_IBankroll_$2657",
               "typeString": "contract IBankroll"
             },
             "typeName": {
-              "id": 2670,
+              "id": 2674,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 2669,
+                "id": 2673,
                 "name": "IBankroll",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 2653,
-                "src": "453:9:10"
+                "referencedDeclaration": 2657,
+                "src": "453:9:11"
               },
-              "referencedDeclaration": 2653,
-              "src": "453:9:10",
+              "referencedDeclaration": 2657,
+              "src": "453:9:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IBankroll_$2653",
+                "typeIdentifier": "t_contract$_IBankroll_$2657",
                 "typeString": "contract IBankroll"
               }
             },
@@ -488,22 +488,22 @@
           },
           {
             "body": {
-              "id": 2683,
+              "id": 2687,
               "nodeType": "Block",
-              "src": "537:41:10",
+              "src": "537:41:11",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2680,
+                        "id": 2684,
                         "name": "Bankroll",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2674,
-                        "src": "561:8:10",
+                        "referencedDeclaration": 2678,
+                        "src": "561:8:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       }
@@ -511,22 +511,22 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       ],
-                      "id": 2679,
+                      "id": 2683,
                       "name": "_setBankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2695,
-                      "src": "548:12:10",
+                      "referencedDeclaration": 2699,
+                      "src": "548:12:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2653_$returns$__$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2657_$returns$__$",
                         "typeString": "function (contract IBankroll)"
                       }
                     },
-                    "id": 2681,
+                    "id": 2685,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -534,235 +534,235 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "548:22:10",
+                    "src": "548:22:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2682,
+                  "id": 2686,
                   "nodeType": "ExpressionStatement",
-                  "src": "548:22:10"
+                  "src": "548:22:11"
                 }
               ]
             },
             "functionSelector": "bde8a93e",
-            "id": 2684,
+            "id": 2688,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2677,
+                "id": 2681,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2676,
+                  "id": 2680,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
-                  "src": "527:9:10"
+                  "src": "527:9:11"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "527:9:10"
+                "src": "527:9:11"
               }
             ],
             "name": "setBankroll",
-            "nameLocation": "488:11:10",
+            "nameLocation": "488:11:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2675,
+              "id": 2679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2674,
+                  "id": 2678,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "510:8:10",
+                  "nameLocation": "510:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2684,
-                  "src": "500:18:10",
+                  "scope": 2688,
+                  "src": "500:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2673,
+                    "id": 2677,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2672,
+                      "id": 2676,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "500:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "500:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "500:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "500:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "499:20:10"
+              "src": "499:20:11"
             },
             "returnParameters": {
-              "id": 2678,
+              "id": 2682,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "537:0:10"
+              "src": "537:0:11"
             },
-            "scope": 2696,
-            "src": "479:99:10",
+            "scope": 2700,
+            "src": "479:99:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2694,
+              "id": 2698,
               "nodeType": "Block",
-              "src": "634:39:10",
+              "src": "634:39:11",
               "statements": [
                 {
                   "expression": {
-                    "id": 2692,
+                    "id": 2696,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2690,
+                      "id": 2694,
                       "name": "_Bankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2671,
-                      "src": "645:9:10",
+                      "referencedDeclaration": 2675,
+                      "src": "645:9:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IBankroll_$2653",
+                        "typeIdentifier": "t_contract$_IBankroll_$2657",
                         "typeString": "contract IBankroll"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 2691,
+                      "id": 2695,
                       "name": "Bankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2687,
-                      "src": "657:8:10",
+                      "referencedDeclaration": 2691,
+                      "src": "657:8:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IBankroll_$2653",
+                        "typeIdentifier": "t_contract$_IBankroll_$2657",
                         "typeString": "contract IBankroll"
                       }
                     },
-                    "src": "645:20:10",
+                    "src": "645:20:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
-                  "id": 2693,
+                  "id": 2697,
                   "nodeType": "ExpressionStatement",
-                  "src": "645:20:10"
+                  "src": "645:20:11"
                 }
               ]
             },
-            "id": 2695,
+            "id": 2699,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_setBankroll",
-            "nameLocation": "593:12:10",
+            "nameLocation": "593:12:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2688,
+              "id": 2692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2687,
+                  "id": 2691,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "616:8:10",
+                  "nameLocation": "616:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2695,
-                  "src": "606:18:10",
+                  "scope": 2699,
+                  "src": "606:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2686,
+                    "id": 2690,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2685,
+                      "id": 2689,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "606:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "606:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "606:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "606:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "605:20:10"
+              "src": "605:20:11"
             },
             "returnParameters": {
-              "id": 2689,
+              "id": 2693,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "634:0:10"
+              "src": "634:0:11"
             },
-            "scope": 2696,
-            "src": "584:89:10",
+            "scope": 2700,
+            "src": "584:89:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "private"
           }
         ],
-        "scope": 2697,
-        "src": "327:349:10",
+        "scope": 2701,
+        "src": "327:349:11",
         "usedErrors": []
       }
     ],
-    "src": "34:642:10"
+    "src": "34:642:11"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/bankroll/CasinoGame.sol",
     "exportedSymbols": {
       "CasinoGame": [
-        2696
+        2700
       ],
       "Context": [
         501
       ],
       "IBankroll": [
-        2653
+        2657
       ],
       "Ownable": [
         104
       ]
     },
-    "id": 2697,
+    "id": 2701,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2636,
+        "id": 2640,
         "literals": [
           "solidity",
           "^",
@@ -770,29 +770,29 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "34:23:10"
+        "src": "34:23:11"
       },
       {
         "absolutePath": "@openzeppelin/contracts/utils/Context.sol",
         "file": "@openzeppelin/contracts/utils/Context.sol",
-        "id": 2637,
+        "id": 2641,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2697,
+        "scope": 2701,
         "sourceUnit": 502,
-        "src": "59:51:10",
+        "src": "59:51:11",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 2638,
+        "id": 2642,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2697,
+        "scope": 2701,
         "sourceUnit": 105,
-        "src": "112:52:10",
+        "src": "112:52:11",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -803,36 +803,36 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 2653,
+        "id": 2657,
         "linearizedBaseContracts": [
-          2653
+          2657
         ],
         "name": "IBankroll",
-        "nameLocation": "178:9:10",
+        "nameLocation": "178:9:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "a6bb4664",
-            "id": 2645,
+            "id": 2649,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "playFrom",
-            "nameLocation": "204:8:10",
+            "nameLocation": "204:8:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2643,
+              "id": 2647,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2640,
+                  "id": 2644,
                   "mutability": "mutable",
                   "name": "player",
-                  "nameLocation": "223:6:10",
+                  "nameLocation": "223:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2645,
-                  "src": "215:14:10",
+                  "scope": 2649,
+                  "src": "215:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -840,10 +840,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2639,
+                    "id": 2643,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "215:7:10",
+                    "src": "215:7:11",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -854,13 +854,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2642,
+                  "id": 2646,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "239:6:10",
+                  "nameLocation": "239:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2645,
-                  "src": "231:14:10",
+                  "scope": 2649,
+                  "src": "231:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -868,10 +868,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2641,
+                    "id": 2645,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "231:7:10",
+                    "src": "231:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -880,42 +880,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "213:34:10"
+              "src": "213:34:11"
             },
             "returnParameters": {
-              "id": 2644,
+              "id": 2648,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "256:0:10"
+              "src": "256:0:11"
             },
-            "scope": 2653,
-            "src": "195:62:10",
+            "scope": 2657,
+            "src": "195:62:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "8d0c3bd4",
-            "id": 2652,
+            "id": 2656,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "winTo",
-            "nameLocation": "272:5:10",
+            "nameLocation": "272:5:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2650,
+              "id": 2654,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2647,
+                  "id": 2651,
                   "mutability": "mutable",
                   "name": "player",
-                  "nameLocation": "288:6:10",
+                  "nameLocation": "288:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2652,
-                  "src": "280:14:10",
+                  "scope": 2656,
+                  "src": "280:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -923,10 +923,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2646,
+                    "id": 2650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "280:7:10",
+                    "src": "280:7:11",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -937,13 +937,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2649,
+                  "id": 2653,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "304:6:10",
+                  "nameLocation": "304:6:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2652,
-                  "src": "296:14:10",
+                  "scope": 2656,
+                  "src": "296:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -951,10 +951,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2648,
+                    "id": 2652,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "296:7:10",
+                    "src": "296:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -963,23 +963,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "278:34:10"
+              "src": "278:34:11"
             },
             "returnParameters": {
-              "id": 2651,
+              "id": 2655,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "321:0:10"
+              "src": "321:0:11"
             },
-            "scope": 2653,
-            "src": "263:59:10",
+            "scope": 2657,
+            "src": "263:59:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2697,
-        "src": "168:157:10",
+        "scope": 2701,
+        "src": "168:157:11",
         "usedErrors": []
       },
       {
@@ -987,61 +987,61 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 2654,
+              "id": 2658,
               "name": "Context",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 501,
-              "src": "350:7:10"
+              "src": "350:7:11"
             },
-            "id": 2655,
+            "id": 2659,
             "nodeType": "InheritanceSpecifier",
-            "src": "350:7:10"
+            "src": "350:7:11"
           },
           {
             "baseName": {
-              "id": 2656,
+              "id": 2660,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 104,
-              "src": "359:7:10"
+              "src": "359:7:11"
             },
-            "id": 2657,
+            "id": 2661,
             "nodeType": "InheritanceSpecifier",
-            "src": "359:7:10"
+            "src": "359:7:11"
           }
         ],
         "canonicalName": "CasinoGame",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2696,
+        "id": 2700,
         "linearizedBaseContracts": [
-          2696,
+          2700,
           104,
           501
         ],
         "name": "CasinoGame",
-        "nameLocation": "336:10:10",
+        "nameLocation": "336:10:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2667,
+              "id": 2671,
               "nodeType": "Block",
-              "src": "406:41:10",
+              "src": "406:41:11",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2664,
+                        "id": 2668,
                         "name": "Bankroll",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2660,
-                        "src": "430:8:10",
+                        "referencedDeclaration": 2664,
+                        "src": "430:8:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       }
@@ -1049,22 +1049,22 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       ],
-                      "id": 2663,
+                      "id": 2667,
                       "name": "_setBankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2695,
-                      "src": "417:12:10",
+                      "referencedDeclaration": 2699,
+                      "src": "417:12:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2653_$returns$__$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2657_$returns$__$",
                         "typeString": "function (contract IBankroll)"
                       }
                     },
-                    "id": 2665,
+                    "id": 2669,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1072,20 +1072,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "417:22:10",
+                    "src": "417:22:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2666,
+                  "id": 2670,
                   "nodeType": "ExpressionStatement",
-                  "src": "417:22:10"
+                  "src": "417:22:11"
                 }
               ]
             },
-            "id": 2668,
+            "id": 2672,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -1093,87 +1093,87 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2661,
+              "id": 2665,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2660,
+                  "id": 2664,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "396:8:10",
+                  "nameLocation": "396:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2668,
-                  "src": "386:18:10",
+                  "scope": 2672,
+                  "src": "386:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2659,
+                    "id": 2663,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2658,
+                      "id": 2662,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "386:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "386:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "386:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "386:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "385:20:10"
+              "src": "385:20:11"
             },
             "returnParameters": {
-              "id": 2662,
+              "id": 2666,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "406:0:10"
+              "src": "406:0:11"
             },
-            "scope": 2696,
-            "src": "374:73:10",
+            "scope": 2700,
+            "src": "374:73:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 2671,
+            "id": 2675,
             "mutability": "mutable",
             "name": "_Bankroll",
-            "nameLocation": "463:9:10",
+            "nameLocation": "463:9:11",
             "nodeType": "VariableDeclaration",
-            "scope": 2696,
-            "src": "453:19:10",
+            "scope": 2700,
+            "src": "453:19:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IBankroll_$2653",
+              "typeIdentifier": "t_contract$_IBankroll_$2657",
               "typeString": "contract IBankroll"
             },
             "typeName": {
-              "id": 2670,
+              "id": 2674,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 2669,
+                "id": 2673,
                 "name": "IBankroll",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 2653,
-                "src": "453:9:10"
+                "referencedDeclaration": 2657,
+                "src": "453:9:11"
               },
-              "referencedDeclaration": 2653,
-              "src": "453:9:10",
+              "referencedDeclaration": 2657,
+              "src": "453:9:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IBankroll_$2653",
+                "typeIdentifier": "t_contract$_IBankroll_$2657",
                 "typeString": "contract IBankroll"
               }
             },
@@ -1181,22 +1181,22 @@
           },
           {
             "body": {
-              "id": 2683,
+              "id": 2687,
               "nodeType": "Block",
-              "src": "537:41:10",
+              "src": "537:41:11",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2680,
+                        "id": 2684,
                         "name": "Bankroll",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2674,
-                        "src": "561:8:10",
+                        "referencedDeclaration": 2678,
+                        "src": "561:8:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       }
@@ -1204,22 +1204,22 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_IBankroll_$2653",
+                          "typeIdentifier": "t_contract$_IBankroll_$2657",
                           "typeString": "contract IBankroll"
                         }
                       ],
-                      "id": 2679,
+                      "id": 2683,
                       "name": "_setBankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2695,
-                      "src": "548:12:10",
+                      "referencedDeclaration": 2699,
+                      "src": "548:12:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2653_$returns$__$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IBankroll_$2657_$returns$__$",
                         "typeString": "function (contract IBankroll)"
                       }
                     },
-                    "id": 2681,
+                    "id": 2685,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1227,212 +1227,212 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "548:22:10",
+                    "src": "548:22:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2682,
+                  "id": 2686,
                   "nodeType": "ExpressionStatement",
-                  "src": "548:22:10"
+                  "src": "548:22:11"
                 }
               ]
             },
             "functionSelector": "bde8a93e",
-            "id": 2684,
+            "id": 2688,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2677,
+                "id": 2681,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2676,
+                  "id": 2680,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
-                  "src": "527:9:10"
+                  "src": "527:9:11"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "527:9:10"
+                "src": "527:9:11"
               }
             ],
             "name": "setBankroll",
-            "nameLocation": "488:11:10",
+            "nameLocation": "488:11:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2675,
+              "id": 2679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2674,
+                  "id": 2678,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "510:8:10",
+                  "nameLocation": "510:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2684,
-                  "src": "500:18:10",
+                  "scope": 2688,
+                  "src": "500:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2673,
+                    "id": 2677,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2672,
+                      "id": 2676,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "500:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "500:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "500:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "500:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "499:20:10"
+              "src": "499:20:11"
             },
             "returnParameters": {
-              "id": 2678,
+              "id": 2682,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "537:0:10"
+              "src": "537:0:11"
             },
-            "scope": 2696,
-            "src": "479:99:10",
+            "scope": 2700,
+            "src": "479:99:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2694,
+              "id": 2698,
               "nodeType": "Block",
-              "src": "634:39:10",
+              "src": "634:39:11",
               "statements": [
                 {
                   "expression": {
-                    "id": 2692,
+                    "id": 2696,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2690,
+                      "id": 2694,
                       "name": "_Bankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2671,
-                      "src": "645:9:10",
+                      "referencedDeclaration": 2675,
+                      "src": "645:9:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IBankroll_$2653",
+                        "typeIdentifier": "t_contract$_IBankroll_$2657",
                         "typeString": "contract IBankroll"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 2691,
+                      "id": 2695,
                       "name": "Bankroll",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2687,
-                      "src": "657:8:10",
+                      "referencedDeclaration": 2691,
+                      "src": "657:8:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IBankroll_$2653",
+                        "typeIdentifier": "t_contract$_IBankroll_$2657",
                         "typeString": "contract IBankroll"
                       }
                     },
-                    "src": "645:20:10",
+                    "src": "645:20:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
-                  "id": 2693,
+                  "id": 2697,
                   "nodeType": "ExpressionStatement",
-                  "src": "645:20:10"
+                  "src": "645:20:11"
                 }
               ]
             },
-            "id": 2695,
+            "id": 2699,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_setBankroll",
-            "nameLocation": "593:12:10",
+            "nameLocation": "593:12:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2688,
+              "id": 2692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2687,
+                  "id": 2691,
                   "mutability": "mutable",
                   "name": "Bankroll",
-                  "nameLocation": "616:8:10",
+                  "nameLocation": "616:8:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2695,
-                  "src": "606:18:10",
+                  "scope": 2699,
+                  "src": "606:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IBankroll_$2653",
+                    "typeIdentifier": "t_contract$_IBankroll_$2657",
                     "typeString": "contract IBankroll"
                   },
                   "typeName": {
-                    "id": 2686,
+                    "id": 2690,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2685,
+                      "id": 2689,
                       "name": "IBankroll",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2653,
-                      "src": "606:9:10"
+                      "referencedDeclaration": 2657,
+                      "src": "606:9:11"
                     },
-                    "referencedDeclaration": 2653,
-                    "src": "606:9:10",
+                    "referencedDeclaration": 2657,
+                    "src": "606:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IBankroll_$2653",
+                      "typeIdentifier": "t_contract$_IBankroll_$2657",
                       "typeString": "contract IBankroll"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "605:20:10"
+              "src": "605:20:11"
             },
             "returnParameters": {
-              "id": 2689,
+              "id": 2693,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "634:0:10"
+              "src": "634:0:11"
             },
-            "scope": 2696,
-            "src": "584:89:10",
+            "scope": 2700,
+            "src": "584:89:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "private"
           }
         ],
-        "scope": 2697,
-        "src": "327:349:10",
+        "scope": 2701,
+        "src": "327:349:11",
         "usedErrors": []
       }
     ],
-    "src": "34:642:10"
+    "src": "34:642:11"
   },
   "compiler": {
     "name": "solc",
@@ -1440,7 +1440,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-29T18:54:13.100Z",
+  "updatedAt": "2021-11-29T19:37:31.575Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -4,18 +4,13 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "luk1529_solidity/contracts/utils/Random.sol";
+import "./bankroll/CasinoGame.sol";
 
-contract Slots is Ownable, Random("slottywotty") {
+contract Slots is Ownable, Random("slottywotty"), CasinoGame {
     using Address for address;
 
-    constructor(IERC20 _XYA) {
-        XYA = _XYA;
+    constructor(IBankroll Bankroll) CasinoGame(Bankroll) {
     }
-    
-    
-    
-    //XYA
-    IERC20 XYA;
     
     
     
@@ -29,11 +24,8 @@ contract Slots is Ownable, Random("slottywotty") {
     
     
     //events
-    event Won(address indexed player, uint winnings);
     event Spun(address indexed player);
-    event Deposit(address indexed player, uint amount);
-    event Withdraw(address indexed player, uint amount);
-    
+    event Nudged(address indexed player);
     
     
     //player info
@@ -41,8 +33,6 @@ contract Slots is Ownable, Random("slottywotty") {
     mapping(address => bool[3]) _held;
     mapping(address => uint) _holds;
     mapping(address => uint) _nudges;
-    mapping(address => uint) _credits;
-    mapping(address => uint) _bank;
     mapping(address => string[3][]) _historicalResults;
     mapping(address => uint[]) _historicalWinnings;
     
@@ -55,7 +45,7 @@ contract Slots is Ownable, Random("slottywotty") {
     }
     PayLineData[] _payTable;
 
-
+    
 
     //pay table
     function addToPayTable(PayLineData calldata _payLineData) public onlyOwner {
@@ -127,13 +117,6 @@ contract Slots is Ownable, Random("slottywotty") {
         return _getPositions(_player);
     }
 
-    //admin withdraw
-    function withdraw(uint _value) public onlyOwner {
-        _withdraw(_msgSender(), _value);
-    }
-
-
-
     //price per spin
     function creditPrice() public view returns(uint) {
         return _getCreditPrice();
@@ -146,18 +129,6 @@ contract Slots is Ownable, Random("slottywotty") {
 
 
     //main game
-    function deposit(uint _value) public {
-        address player = _msgSender();
-        XYA.transferFrom(player, address(this), _value);
-        _addToCredits(player, _value);
-    }
-
-    function withdrawBank() public {
-        address player = _msgSender();
-        uint bank = _getBank(player);
-        XYA.transfer(player, bank);
-        _takeFromBank(player, bank);
-    }
 
     function spin() public noContract {
         address player = _msgSender();
@@ -180,15 +151,6 @@ contract Slots is Ownable, Random("slottywotty") {
         address player = _msgSender();
         _nudge(player, _index);
     }
-
-    function bankOf(address _player) public view returns(uint) {
-        return _getBank(_player);
-    }
-
-    function creditBalanceOf(address _player) public view returns(uint) {
-        return _getCredits(_player);
-    }
-
     function holdsOf(address _player) public view returns(uint) {
         return _getHolds(_player);
     }
@@ -277,14 +239,6 @@ contract Slots is Ownable, Random("slottywotty") {
         _reels = _newReels;
     }
 
-    function _getBank(address _player) private view returns(uint) {
-        return _bank[_player];
-    }
-
-    function _getCredits(address _player) private view returns(uint) {
-        return _credits[_player];
-    }
-
     function _getHolds(address _player) private view returns(uint) {
         return _holds[_player];
     }
@@ -328,30 +282,8 @@ contract Slots is Ownable, Random("slottywotty") {
         _nudges[_player] --;
     }
 
-    function _takeFromCredits(address _player, uint _value) private {
-        require(_credits[_player] >= _value, "You have ran out of credits.");
-        _credits[_player] -= _value;
-        emit Spun(_player);
-    }
-
-    function _addToCredits(address _player, uint _value) private {
-        _credits[_player] += _value;
-        emit Deposit(_player, _value);
-    }
-
-    function _takeFromBank(address _player, uint _value) private {
-        require(_bank[_player] >= _value, "Your bank balance is too low to withdraw this amount.");
-        _bank[_player] -= _value;
-        emit Withdraw(_player, _value);
-    }
-
-    function _addToBank(address _player, uint _value) private {
-        _bank[_player] += _value;
-        emit Won(_player, _value);
-    }
-
     function _payForSpin(address _player) private {
-        _takeFromCredits(_player, _creditPrice);
+        _Bankroll.playFrom(_player, _creditPrice);
     }
 
     function _awardHolds(address _player) private {
@@ -386,6 +318,7 @@ contract Slots is Ownable, Random("slottywotty") {
                 positions[i] = pos;
             }
         }
+        emit Spun(_player);
     }
 
 
@@ -399,6 +332,7 @@ contract Slots is Ownable, Random("slottywotty") {
         positions[_index] = (pos + 1) % currentReels[_index].length;
         _decrementNudges(_player);
         _payout(_player);
+        emit Nudged(_player);
     }
 
 
@@ -426,7 +360,7 @@ contract Slots is Ownable, Random("slottywotty") {
             string[3] memory payLine = payLineData.payLine;
             uint payout = payLineData.payout;
             if(keccak256(abi.encode(payLine)) == keccak256(abi.encode(result))) {
-                _addToBank(_player, payout);
+                _Bankroll.winTo(_player, payout);
             }
             winnings += payout;
         }
@@ -463,10 +397,6 @@ contract Slots is Ownable, Random("slottywotty") {
         address sender = _msgSender();
         require(!sender.isContract(), "Contracts may not play slots.");
         _;
-    }
-
-    function _withdraw(address _to, uint _value) private {
-        XYA.transfer(_to, _value);
     }
 
     function _getSalt() internal override pure returns(bytes memory) {

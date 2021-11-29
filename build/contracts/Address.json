@@ -8051,7 +8051,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-28T16:56:06.748Z",
+  "updatedAt": "2021-11-29T18:54:13.026Z",
   "devdoc": {
     "details": "Collection of functions related to the address type",
     "kind": "dev",

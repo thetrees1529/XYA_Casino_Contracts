@@ -66,8 +66,17 @@ contract Bankroll is Context, Ownable, FeeTakers {
         _setApproval(addr, approval);
     }
 
+
+    //take out funds if necessary
+    function emergencyWithdraw(uint amount) public onlyOwner {
+        _emergencyWithdraw(_msgSender(), amount);
+    }
+
+
+
+
     modifier onlyApproved() {
-        require(_approved[_msgSender()], "You aren't allowed to do that.");
+        require(_approved[_msgSender()], "You aren't approved.");
         _;
     }
 
@@ -117,6 +126,10 @@ contract Bankroll is Context, Ownable, FeeTakers {
             _distributeFee(toDistribute);
             emit ProfitTaken(toDistribute);
         }
+    }
+
+    function _emergencyWithdraw(address to, uint amount) private {
+        _XYA.transfer(to, amount);
     }
 
     function _setApproval(address addr, bool approval) private {

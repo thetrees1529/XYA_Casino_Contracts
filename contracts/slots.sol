@@ -283,7 +283,7 @@ contract Slots is Ownable, Random("slottywotty"), CasinoGame {
     }
 
     function _payForSpin(address _player) private {
-        _Bankroll.playFrom(_player, _creditPrice);
+        _bankrollContract().playFrom(_player, _creditPrice);
     }
 
     function _awardHolds(address _player) private {
@@ -360,7 +360,7 @@ contract Slots is Ownable, Random("slottywotty"), CasinoGame {
             string[3] memory payLine = payLineData.payLine;
             uint payout = payLineData.payout;
             if(keccak256(abi.encode(payLine)) == keccak256(abi.encode(result))) {
-                _Bankroll.winTo(_player, payout);
+                _bankrollContract().winTo(_player, payout);
             }
             winnings += payout;
         }
@@ -391,6 +391,10 @@ contract Slots is Ownable, Random("slottywotty"), CasinoGame {
     function _logHistoricalWinnings(address _player, uint _winnings) private {
         uint[] storage historicalWinnings = _getHistoricalWinnings(_player);
         historicalWinnings.push(_winnings);
+    }
+
+    function _bankrollContract() private view returns(IBankroll) {
+        return _getBankroll();
     }
 
     modifier noContract() {

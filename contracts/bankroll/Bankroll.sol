@@ -46,6 +46,12 @@ contract Bankroll is Context, Ownable, FeeTakers {
     }
 
 
+    //get the data of a player - credit, bank etc.
+    function getPlayerData(address player) public view returns(PlayerData memory) {
+        return _getPlayerData(player);
+    }
+
+
     //approved contracts (games) can take funds from players' credit balances and award funds to their bank balances
     function playFrom(address player, uint amount) public onlyApproved {
         _playFrom(player, amount);
@@ -61,7 +67,7 @@ contract Bankroll is Context, Ownable, FeeTakers {
     }
 
     modifier onlyApproved() {
-        require(_approved[_msgSender()]);
+        require(_approved[_msgSender()], "You aren't allowed to do that.");
         _;
     }
 

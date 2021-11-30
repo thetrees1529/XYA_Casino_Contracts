@@ -42,11 +42,6 @@ contract CardGame is Random("cardywardy") {
 
     Card[] _referenceDeck;
 
-    function _randomCard() internal returns(Card memory) {
-        Value value = Value(_randomNumber(uint(Value.KING) + 1));
-        Suit suit = Suit(_randomNumber(uint(Suit.SPADES) + 1));
-        return Card(suit, value);
-    }
     function _copyReferenceDeck(uint deckId) internal {
         _decks[deckId] = _referenceDeck;
     }

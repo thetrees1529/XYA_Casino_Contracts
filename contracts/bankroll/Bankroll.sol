@@ -22,6 +22,11 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
         uint totalWon;
     }
 
+    struct GameData {
+        uint totalInflow;
+        uint totalOutflow;
+    }
+
 
     event Deposit(address indexed from, uint amount);
     event Withdraw(address indexed to, uint amount);
@@ -32,6 +37,7 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
 
     mapping(address => bool) _approved;
     mapping(address => PlayerData) _playerData;
+    mapping(address => GameData) _gameData;
 
 
     //user can deposit to their credit balance and withdraw funds from their bank balance
@@ -47,14 +53,17 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
     function getPlayerData(address player) public view returns(PlayerData memory) {
         return _getPlayerData(player);
     }
+    function getGameData(address game) public view returns(GameData memory) {
+        return _getGameData(game);
+    }
 
 
     //approved contracts (games) can take funds from players' credit balances and award funds to their bank balances
     function playFrom(address player, uint amount) public onlyApproved {
-        _playFrom(player, amount);
+        _playFrom(_msgSender(), player, amount);
     }
     function winTo(address player, uint amount) public onlyApproved {
-        _winTo(player, amount);
+        _winTo(_msgSender(), player, amount);
     }
 
 
@@ -81,6 +90,10 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
         return _playerData[player];
     }
 
+    function _getGameData(address game) private view returns(GameData storage) {
+        return _gameData[game];
+    }
+
     function _depositFrom(address player, uint amount) private {
         PlayerData storage playerData = _getPlayerData(player);
         playerData.credit += amount;
@@ -95,16 +108,20 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
         emit Withdraw(player, amount);
     }
 
-    function _playFrom(address player, uint amount) private {
+    function _playFrom(address game, address player, uint amount) private {
         PlayerData storage playerData = _getPlayerData(player);
+        GameData storage gameData = _getGameData(game);
         _totalInflow += amount;
+        gameData.totalInflow += amount;
         playerData.credit -= amount;
         emit Spent(player, amount);
     }
 
-    function _winTo(address player, uint amount) private {
+    function _winTo(address game, address player, uint amount) private {
         PlayerData storage playerData = _getPlayerData(player);
+        GameData storage gameData = _getGameData(game);
         _totalOutflow += amount;
+        gameData.totalOutflow += amount;
         playerData.bank += amount;
         emit Won(player, amount);
         _takeProfit();

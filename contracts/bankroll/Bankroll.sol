@@ -71,6 +71,9 @@ contract Bankroll is Context, Ownable, ERC20User, FeeTakers {
     function setApproval(address addr, bool approval) public onlyOwner {
         _setApproval(addr, approval);
     }
+    function getApproval(address addr) public onlyOwner view returns(bool) {
+        return _approved[addr];
+    }
 
     //take out funds if necessary
     function emergencyWithdraw(uint amount) public onlyOwner {

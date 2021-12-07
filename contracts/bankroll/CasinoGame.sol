@@ -2,19 +2,16 @@
 
 pragma solidity ^0.8.0;
 
-interface IBankroll {
-    function playFrom ( address player, uint256 amount ) external;
-    function winTo ( address player, uint256 amount ) external;
-}
+import "./Bankroll.sol";
 contract CasinoGame{
-    constructor(IBankroll Bankroll) {
-        _setBankroll(Bankroll);
+    constructor(Bankroll Bankroll_) {
+        _setBankroll(Bankroll_);
     }
-    IBankroll _Bankroll;
-    function _setBankroll(IBankroll Bankroll) internal {
-        _Bankroll = Bankroll;
+    Bankroll _Bankroll;
+    function _setBankroll(Bankroll Bankroll_) internal {
+        _Bankroll = Bankroll_;
     }
-    function _getBankroll() internal view returns(IBankroll) {
+    function _getBankroll() internal view returns(Bankroll) {
         return _Bankroll;
     }
 }

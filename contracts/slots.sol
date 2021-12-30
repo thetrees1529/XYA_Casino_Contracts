@@ -9,7 +9,7 @@ import "./bankroll/CasinoGame.sol";
 contract Slots is Ownable, Random("slottywotty"), CasinoGame {
     using Address for address;
 
-    constructor(IBankroll Bankroll) CasinoGame(Bankroll) {
+    constructor(Bankroll Bankroll_) CasinoGame(Bankroll_) {
     }
     
     
@@ -393,7 +393,7 @@ contract Slots is Ownable, Random("slottywotty"), CasinoGame {
         historicalWinnings.push(_winnings);
     }
 
-    function _bankrollContract() private view returns(IBankroll) {
+    function _bankrollContract() private view returns(Bankroll) {
         return _getBankroll();
     }
 
